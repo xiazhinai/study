@@ -8,7 +8,7 @@ import lombok.SneakyThrows;
  */
 public class Test09 {
 
-    public  static  long count;
+    public  static    long count;
 
     @SneakyThrows
     public static void main(String[] args) {
@@ -19,12 +19,12 @@ public class Test09 {
         }
         Thread.sleep(5000);
         System.out.println(count);
+        main(args);
     }
 
     public  void run(){
-        synchronized(Test09.class){
         for (int i = 0; i < 1000; i++) {
             ++count;
-        }}
+        }
     };
 }
