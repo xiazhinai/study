@@ -3,6 +3,8 @@ package com.example.demo.test;
 
 
 
+import lombok.SneakyThrows;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,14 +22,17 @@ import java.util.Map;
  */
 public class Test07 {
 
+    @SneakyThrows
     public static void main(String[] args) {
 
         HttpRequest httpRequest = new HttpRequest();
         int i =0;
         while (true){
+            Thread.sleep(1);
             String a = HttpRequest.sendPost("https://t2cisadmin.tyzsls.com/prod-api/auth/login","username=username&password=123");
             System.out.println(i++);
             System.out.println( a);
+
         }
     }
 
@@ -123,12 +128,12 @@ public class Test07 {
                 // flush输出流的缓冲
                 out.flush();
                 // 定义BufferedReader输入流来读取URL的响应
-//                in = new BufferedReader(
-//                        new InputStreamReader(conn.getInputStream()));
-//                String line;
-//                while ((line = in.readLine()) != null) {
-//                    result += line;
-//                }
+                in = new BufferedReader(
+                        new InputStreamReader(conn.getInputStream()));
+                String line;
+                while ((line = in.readLine()) != null) {
+                    result += line;
+                }
 
             }
 
