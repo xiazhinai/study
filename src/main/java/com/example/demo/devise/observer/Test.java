@@ -2,6 +2,7 @@ package com.example.demo.devise.observer;
 
 /**
  * @author xiazhinai
+ * 观察者模式 observer
  */
 public class Test {
 
